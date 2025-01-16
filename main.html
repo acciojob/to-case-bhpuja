@@ -1,16 +1,74 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toCase Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <div class="container">
+        <h1>Convert String to Lowercase and Uppercase</h1>
+        <input type="text" id="inputString" placeholder="Enter a string">
+        <button onclick="toCase()">Convert</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function toCase() {
+            // Get the input string from the user
+            let inputString = document.getElementById("inputString").value;
+            
+            // Handle empty string case
+            if (inputString === "") {
+                document.getElementById("result").innerText = "-";
+                return;
+            }
+
+            // Convert the string to lowercase and uppercase, then join with '-'
+            let result = inputString.toLowerCase() + '-' + inputString.toUpperCase();
+
+            // Display the result
+            document.getElementById("result").innerText = result;
+        }
+    </script>
 
 </body>
-
 </html>
+
